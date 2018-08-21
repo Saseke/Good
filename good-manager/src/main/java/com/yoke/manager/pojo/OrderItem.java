@@ -1,7 +1,10 @@
 package com.yoke.manager.pojo;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
 import java.math.BigDecimal;
-import javax.persistence.*;
 
 @Table(name = "db_order_item")
 public class OrderItem {

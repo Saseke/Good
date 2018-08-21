@@ -1,10 +1,11 @@
-package com.yoke.manager.dao.mapper;
+package com.yoke.manager.mapper;
 
 import com.yoke.manager.pojo.Permission;
 import com.yoke.manager.pojo.PermissionExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import tk.mybatis.mapper.common.Mapper;
+
+import java.util.List;
 
 public interface PermissionMapper extends Mapper<Permission> {
     long countByExample(PermissionExample example);

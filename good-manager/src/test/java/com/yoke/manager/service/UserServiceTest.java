@@ -15,6 +15,6 @@ public class UserServiceTest {
 
     @Test
     public void select() {
-        Assert.assertNotNull(userService.selectByKey(1));
+        Assert.assertNotNull(userService.getUsers());
     }
 }

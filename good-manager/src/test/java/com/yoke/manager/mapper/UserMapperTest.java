@@ -1,6 +1,5 @@
 package com.yoke.manager.mapper;
 
-import com.yoke.manager.dao.mapper.UserMapper;
 import com.yoke.manager.pojo.User;
 import org.junit.Assert;
 import org.junit.Test;

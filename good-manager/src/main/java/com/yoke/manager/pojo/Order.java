@@ -1,8 +1,8 @@
 package com.yoke.manager.pojo;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
-import javax.persistence.*;
 
 @Table(name = "db_order")
 public class Order {

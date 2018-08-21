@@ -1,10 +1,11 @@
-package com.yoke.manager.dao.mapper;
+package com.yoke.manager.mapper;
 
 import com.yoke.manager.pojo.ItemCat;
 import com.yoke.manager.pojo.ItemCatExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import tk.mybatis.mapper.common.Mapper;
+
+import java.util.List;
 
 public interface ItemCatMapper extends Mapper<ItemCat> {
     long countByExample(ItemCatExample example);

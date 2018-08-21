@@ -2,24 +2,27 @@ package com.yoke.manager.pojo;
 
 import io.leangen.graphql.annotations.GraphQLQuery;
 
-import java.util.Date;
 import javax.persistence.*;
+import java.util.Date;
 
 @Table(name = "db_user")
 public class User {
     @Id
     @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GraphQLQuery(name = "userId")
     private Long userId;
 
     /**
      * 用户名
      */
+    @GraphQLQuery(name = "username")
     private String username;
 
     /**
      * 密码
      */
+    @GraphQLQuery(name = "password")
     private String password;
 
     /**

@@ -1,7 +1,7 @@
 package com.yoke.manager.pojo;
 
-import java.util.Date;
 import javax.persistence.*;
+import java.util.Date;
 
 @Table(name = "db_panel")
 public class Panel {

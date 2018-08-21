@@ -1,10 +1,11 @@
-package com.yoke.manager.dao.mapper;
+package com.yoke.manager.mapper;
 
 import com.yoke.manager.pojo.OrderItem;
 import com.yoke.manager.pojo.OrderItemExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import tk.mybatis.mapper.common.Mapper;
+
+import java.util.List;
 
 public interface OrderItemMapper extends Mapper<OrderItem> {
     long countByExample(OrderItemExample example);

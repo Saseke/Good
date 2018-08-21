@@ -1,10 +1,11 @@
-package com.yoke.manager.dao.mapper;
+package com.yoke.manager.mapper;
 
 import com.yoke.manager.pojo.PanelContent;
 import com.yoke.manager.pojo.PanelContentExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import tk.mybatis.mapper.common.Mapper;
+
+import java.util.List;
 
 public interface PanelContentMapper extends Mapper<PanelContent> {
     long countByExample(PanelContentExample example);
