@@ -1,6 +1,6 @@
 package com.yoke.manager.web;
 
-import com.yoke.manager.mapper.AddressMapper;
+import com.yoke.manager.dao.AddressMapper;
 import com.yoke.manager.pojo.Address;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
