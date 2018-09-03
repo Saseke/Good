@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yoke.manager.dao.MemberMapper">
+<mapper namespace="MemberMapper">
   <resultMap id="BaseResultMap" type="com.yoke.manager.pojo.Member">
     <!--
       WARNING - @mbg.generated
     -->
     <constructor>
       <idArg column="member_id" javaType="java.lang.Long" jdbcType="BIGINT" />
-      <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="username" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="created" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="updated" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="sex" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="address" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="state" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="file" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="description" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="point" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="balance" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="created" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="description" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="file" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="point" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="sex" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="state" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="updated" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="username" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -90,8 +90,8 @@
     <!--
       WARNING - @mbg.generated
     -->
-    member_id, password, username, email, phone, created, updated, sex, address, state, 
-    file, description, point, balance
+    member_id, address, balance, created, description, email, file, password, phone, 
+    point, sex, state, updated, username
   </sql>
   <select id="selectByExample" parameterType="com.yoke.manager.pojo.MemberExample" resultMap="BaseResultMap">
     <!--
@@ -138,44 +138,44 @@
       <if test="record.memberId != null">
         member_id = #{record.memberId,jdbcType=BIGINT},
       </if>
-      <if test="record.password != null">
-        password = #{record.password,jdbcType=VARCHAR},
+      <if test="record.address != null">
+        address = #{record.address,jdbcType=VARCHAR},
       </if>
-      <if test="record.username != null">
-        username = #{record.username,jdbcType=VARCHAR},
-      </if>
-      <if test="record.email != null">
-        email = #{record.email,jdbcType=VARCHAR},
-      </if>
-      <if test="record.phone != null">
-        phone = #{record.phone,jdbcType=VARCHAR},
+      <if test="record.balance != null">
+        balance = #{record.balance,jdbcType=DECIMAL},
       </if>
       <if test="record.created != null">
         created = #{record.created,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.updated != null">
-        updated = #{record.updated,jdbcType=TIMESTAMP},
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=VARCHAR},
       </if>
-      <if test="record.sex != null">
-        sex = #{record.sex,jdbcType=VARCHAR},
-      </if>
-      <if test="record.address != null">
-        address = #{record.address,jdbcType=VARCHAR},
-      </if>
-      <if test="record.state != null">
-        state = #{record.state,jdbcType=INTEGER},
+      <if test="record.email != null">
+        email = #{record.email,jdbcType=VARCHAR},
       </if>
       <if test="record.file != null">
         file = #{record.file,jdbcType=VARCHAR},
       </if>
-      <if test="record.description != null">
-        description = #{record.description,jdbcType=VARCHAR},
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null">
+        phone = #{record.phone,jdbcType=VARCHAR},
       </if>
       <if test="record.point != null">
         point = #{record.point,jdbcType=INTEGER},
       </if>
-      <if test="record.balance != null">
-        balance = #{record.balance,jdbcType=DECIMAL},
+      <if test="record.sex != null">
+        sex = #{record.sex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null">
+        state = #{record.state,jdbcType=INTEGER},
+      </if>
+      <if test="record.updated != null">
+        updated = #{record.updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.username != null">
+        username = #{record.username,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -188,19 +188,19 @@
     -->
     update db_member
     set member_id = #{record.memberId,jdbcType=BIGINT},
-      password = #{record.password,jdbcType=VARCHAR},
-      username = #{record.username,jdbcType=VARCHAR},
-      email = #{record.email,jdbcType=VARCHAR},
-      phone = #{record.phone,jdbcType=VARCHAR},
-      created = #{record.created,jdbcType=TIMESTAMP},
-      updated = #{record.updated,jdbcType=TIMESTAMP},
-      sex = #{record.sex,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
-      state = #{record.state,jdbcType=INTEGER},
-      file = #{record.file,jdbcType=VARCHAR},
+      balance = #{record.balance,jdbcType=DECIMAL},
+      created = #{record.created,jdbcType=TIMESTAMP},
       description = #{record.description,jdbcType=VARCHAR},
+      email = #{record.email,jdbcType=VARCHAR},
+      file = #{record.file,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      phone = #{record.phone,jdbcType=VARCHAR},
       point = #{record.point,jdbcType=INTEGER},
-      balance = #{record.balance,jdbcType=DECIMAL}
+      sex = #{record.sex,jdbcType=VARCHAR},
+      state = #{record.state,jdbcType=INTEGER},
+      updated = #{record.updated,jdbcType=TIMESTAMP},
+      username = #{record.username,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

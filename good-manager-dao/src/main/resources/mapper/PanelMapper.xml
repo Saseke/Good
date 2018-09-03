@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yoke.manager.dao.PanelMapper">
+<mapper namespace="PanelMapper">
   <resultMap id="BaseResultMap" type="com.yoke.manager.pojo.Panel">
     <!--
       WARNING - @mbg.generated
     -->
     <constructor>
       <idArg column="panel_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="type" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="sort_order" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="limit_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="created" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="limit_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sort_order" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="type" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="updated" javaType="java.util.Date" jdbcType="TIMESTAMP" />
     </constructor>
   </resultMap>
@@ -85,7 +85,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    panel_id, name, type, sort_order, limit_num, status, remark, created, updated
+    panel_id, created, limit_num, name, remark, sort_order, status, type, updated
   </sql>
   <select id="selectByExample" parameterType="com.yoke.manager.pojo.PanelExample" resultMap="BaseResultMap">
     <!--
@@ -131,26 +131,26 @@
       <if test="record.panelId != null">
         panel_id = #{record.panelId,jdbcType=INTEGER},
       </if>
-      <if test="record.name != null">
-        name = #{record.name,jdbcType=VARCHAR},
-      </if>
-      <if test="record.type != null">
-        type = #{record.type,jdbcType=INTEGER},
-      </if>
-      <if test="record.sortOrder != null">
-        sort_order = #{record.sortOrder,jdbcType=INTEGER},
+      <if test="record.created != null">
+        created = #{record.created,jdbcType=TIMESTAMP},
       </if>
       <if test="record.limitNum != null">
         limit_num = #{record.limitNum,jdbcType=INTEGER},
       </if>
-      <if test="record.status != null">
-        status = #{record.status,jdbcType=INTEGER},
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
       </if>
       <if test="record.remark != null">
         remark = #{record.remark,jdbcType=VARCHAR},
       </if>
-      <if test="record.created != null">
-        created = #{record.created,jdbcType=TIMESTAMP},
+      <if test="record.sortOrder != null">
+        sort_order = #{record.sortOrder,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=INTEGER},
       </if>
       <if test="record.updated != null">
         updated = #{record.updated,jdbcType=TIMESTAMP},
@@ -166,13 +166,13 @@
     -->
     update db_panel
     set panel_id = #{record.panelId,jdbcType=INTEGER},
-      name = #{record.name,jdbcType=VARCHAR},
-      type = #{record.type,jdbcType=INTEGER},
-      sort_order = #{record.sortOrder,jdbcType=INTEGER},
-      limit_num = #{record.limitNum,jdbcType=INTEGER},
-      status = #{record.status,jdbcType=INTEGER},
-      remark = #{record.remark,jdbcType=VARCHAR},
       created = #{record.created,jdbcType=TIMESTAMP},
+      limit_num = #{record.limitNum,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      sort_order = #{record.sortOrder,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=INTEGER},
+      type = #{record.type,jdbcType=INTEGER},
       updated = #{record.updated,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />

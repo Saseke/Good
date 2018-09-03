@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yoke.manager.dao.LogMapper">
+<mapper namespace="LogMapper">
   <resultMap id="BaseResultMap" type="com.yoke.manager.pojo.Log">
     <!--
       WARNING - @mbg.generated
     -->
     <constructor>
       <idArg column="log_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="url" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="request_type" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="request_param" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="user" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_date" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="ip" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="ip_info" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="request_param" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="request_type" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="time" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="create_date" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="url" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="user" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -86,7 +86,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    log_id, name, url, request_type, request_param, user, ip, ip_info, time, create_date
+    log_id, create_date, ip, ip_info, name, request_param, request_type, time, url, user
   </sql>
   <select id="selectByExample" parameterType="com.yoke.manager.pojo.LogExample" resultMap="BaseResultMap">
     <!--
@@ -133,20 +133,8 @@
       <if test="record.logId != null">
         log_id = #{record.logId,jdbcType=INTEGER},
       </if>
-      <if test="record.name != null">
-        name = #{record.name,jdbcType=VARCHAR},
-      </if>
-      <if test="record.url != null">
-        url = #{record.url,jdbcType=VARCHAR},
-      </if>
-      <if test="record.requestType != null">
-        request_type = #{record.requestType,jdbcType=VARCHAR},
-      </if>
-      <if test="record.requestParam != null">
-        request_param = #{record.requestParam,jdbcType=VARCHAR},
-      </if>
-      <if test="record.user != null">
-        user = #{record.user,jdbcType=VARCHAR},
+      <if test="record.createDate != null">
+        create_date = #{record.createDate,jdbcType=TIMESTAMP},
       </if>
       <if test="record.ip != null">
         ip = #{record.ip,jdbcType=VARCHAR},
@@ -154,11 +142,23 @@
       <if test="record.ipInfo != null">
         ip_info = #{record.ipInfo,jdbcType=VARCHAR},
       </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.requestParam != null">
+        request_param = #{record.requestParam,jdbcType=VARCHAR},
+      </if>
+      <if test="record.requestType != null">
+        request_type = #{record.requestType,jdbcType=VARCHAR},
+      </if>
       <if test="record.time != null">
         time = #{record.time,jdbcType=INTEGER},
       </if>
-      <if test="record.createDate != null">
-        create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      <if test="record.url != null">
+        url = #{record.url,jdbcType=VARCHAR},
+      </if>
+      <if test="record.user != null">
+        user = #{record.user,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -171,15 +171,15 @@
     -->
     update db_log
     set log_id = #{record.logId,jdbcType=INTEGER},
-      name = #{record.name,jdbcType=VARCHAR},
-      url = #{record.url,jdbcType=VARCHAR},
-      request_type = #{record.requestType,jdbcType=VARCHAR},
-      request_param = #{record.requestParam,jdbcType=VARCHAR},
-      user = #{record.user,jdbcType=VARCHAR},
+      create_date = #{record.createDate,jdbcType=TIMESTAMP},
       ip = #{record.ip,jdbcType=VARCHAR},
       ip_info = #{record.ipInfo,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      request_param = #{record.requestParam,jdbcType=VARCHAR},
+      request_type = #{record.requestType,jdbcType=VARCHAR},
       time = #{record.time,jdbcType=INTEGER},
-      create_date = #{record.createDate,jdbcType=TIMESTAMP}
+      url = #{record.url,jdbcType=VARCHAR},
+      user = #{record.user,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yoke.manager.dao.OrderShippingMapper">
+<mapper namespace="OrderShippingMapper">
   <resultMap id="BaseResultMap" type="com.yoke.manager.pojo.OrderShipping">
     <!--
       WARNING - @mbg.generated
@@ -8,7 +8,7 @@
     <constructor>
       <idArg column="order_id" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="receiver_name" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="receiver_phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiver_mobile" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="receiver_state" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="receiver_city" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="receiver_district" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -85,7 +85,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    order_id, receiver_name, receiver_phone, receiver_state, receiver_city, receiver_district, 
+    order_id, receiver_name, receiver_mobile, receiver_state, receiver_city, receiver_district, 
     receiver_address, created, updated
   </sql>
   <select id="selectByExample" parameterType="com.yoke.manager.pojo.OrderShippingExample" resultMap="BaseResultMap">
@@ -136,8 +136,8 @@
       <if test="record.receiverName != null">
         receiver_name = #{record.receiverName,jdbcType=VARCHAR},
       </if>
-      <if test="record.receiverPhone != null">
-        receiver_phone = #{record.receiverPhone,jdbcType=VARCHAR},
+      <if test="record.receiverMobile != null">
+        receiver_mobile = #{record.receiverMobile,jdbcType=VARCHAR},
       </if>
       <if test="record.receiverState != null">
         receiver_state = #{record.receiverState,jdbcType=VARCHAR},
@@ -169,7 +169,7 @@
     update db_order_shipping
     set order_id = #{record.orderId,jdbcType=VARCHAR},
       receiver_name = #{record.receiverName,jdbcType=VARCHAR},
-      receiver_phone = #{record.receiverPhone,jdbcType=VARCHAR},
+      receiver_mobile = #{record.receiverMobile,jdbcType=VARCHAR},
       receiver_state = #{record.receiverState,jdbcType=VARCHAR},
       receiver_city = #{record.receiverCity,jdbcType=VARCHAR},
       receiver_district = #{record.receiverDistrict,jdbcType=VARCHAR},

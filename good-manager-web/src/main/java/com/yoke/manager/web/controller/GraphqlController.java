@@ -1,5 +1,8 @@
 package com.yoke.manager.web.controller;
 
+import com.yoke.manager.service.ItemService;
+import com.yoke.manager.service.impl.ItemServiceImpl;
+import com.yoke.manager.web.query.ItemQuery;
 import com.yoke.manager.web.query.UserQuery;
 import graphql.ExecutionInput;
 import graphql.ExecutionResult;
@@ -27,18 +30,21 @@ public class GraphqlController {
     private final GraphQL graphQL;
 
     @Autowired
-    public GraphqlController(UserQuery userQuery) {
+    public GraphqlController(UserQuery userQuery,
+                             ItemQuery itemQuery
+    ) {
         GraphQLSchema schema = new GraphQLSchemaGenerator()
                 .withResolverBuilders(
                         new AnnotatedResolverBuilder(),
                         new PublicResolverBuilder("com.yoke.manager"))
                 .withOperationsFromSingleton(userQuery)
+                .withOperationsFromSingleton(itemQuery)
                 .generate();
         graphQL = GraphQL.newGraphQL(schema).build();
         LOGGER.info("Generated GraphQL schema using SPQR");
     }
 
-    @PostMapping(value = "/graphql", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(value = "/api", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
     public Map<String, Object> indexFromAnnotated(@RequestBody Map<String, String> request, HttpServletRequest raw) {
         ExecutionResult executionResult = graphQL.execute(ExecutionInput.newExecutionInput()

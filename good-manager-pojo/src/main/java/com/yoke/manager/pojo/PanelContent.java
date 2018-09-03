@@ -10,42 +10,30 @@ public class PanelContent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer panelContentId;
 
-    /**
-     * 所属panel
-     */
+    private Date created;
+
     @Column(name = "panel_id")
     private Integer panelId;
 
-    /**
-     * 关联的商品
-     */
-    @Column(name = "product_id")
-    private Long productId;
-
-    /**
-     * 排列顺序
-     */
-    @Column(name = "sort_order")
-    private Integer sortOrder;
-
-    private Date created;
-
-    private Date updated;
-
-    /**
-     * 图片路径
-     */
     @Column(name = "pic_url")
     private String picUrl;
 
-    public PanelContent(Integer panelContentId, Integer panelId, Long productId, Integer sortOrder, Date created, Date updated, String picUrl) {
+    @Column(name = "product_id")
+    private Long productId;
+
+    @Column(name = "sort_order")
+    private Integer sortOrder;
+
+    private Date updated;
+
+    public PanelContent(Integer panelContentId, Date created, Integer panelId, String picUrl, Long productId, Integer sortOrder, Date updated) {
         this.panelContentId = panelContentId;
+        this.created = created;
         this.panelId = panelId;
+        this.picUrl = picUrl;
         this.productId = productId;
         this.sortOrder = sortOrder;
-        this.created = created;
         this.updated = updated;
-        this.picUrl = picUrl;
     }
 
     public PanelContent() {
@@ -67,60 +55,6 @@ public class PanelContent {
     }
 
     /**
-     * 获取所属panel
-     *
-     * @return panel_id - 所属panel
-     */
-    public Integer getPanelId() {
-        return panelId;
-    }
-
-    /**
-     * 设置所属panel
-     *
-     * @param panelId 所属panel
-     */
-    public void setPanelId(Integer panelId) {
-        this.panelId = panelId;
-    }
-
-    /**
-     * 获取关联的商品
-     *
-     * @return product_id - 关联的商品
-     */
-    public Long getProductId() {
-        return productId;
-    }
-
-    /**
-     * 设置关联的商品
-     *
-     * @param productId 关联的商品
-     */
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
-
-    /**
-     * 获取排列顺序
-     *
-     * @return sort_order - 排列顺序
-     */
-    public Integer getSortOrder() {
-        return sortOrder;
-    }
-
-    /**
-     * 设置排列顺序
-     *
-     * @param sortOrder 排列顺序
-     */
-    public void setSortOrder(Integer sortOrder) {
-        this.sortOrder = sortOrder;
-    }
-
-    /**
      * @return created
      */
     public Date getCreated() {
@@ -135,6 +69,62 @@ public class PanelContent {
     }
 
     /**
+     * @return panel_id
+     */
+    public Integer getPanelId() {
+        return panelId;
+    }
+
+    /**
+     * @param panelId
+     */
+    public void setPanelId(Integer panelId) {
+        this.panelId = panelId;
+    }
+
+    /**
+     * @return pic_url
+     */
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    /**
+     * @param picUrl
+     */
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl == null ? null : picUrl.trim();
+    }
+
+    /**
+     * @return product_id
+     */
+    public Long getProductId() {
+        return productId;
+    }
+
+    /**
+     * @param productId
+     */
+    public void setProductId(Long productId) {
+        this.productId = productId;
+    }
+
+    /**
+     * @return sort_order
+     */
+    public Integer getSortOrder() {
+        return sortOrder;
+    }
+
+    /**
+     * @param sortOrder
+     */
+    public void setSortOrder(Integer sortOrder) {
+        this.sortOrder = sortOrder;
+    }
+
+    /**
      * @return updated
      */
     public Date getUpdated() {
@@ -146,23 +136,5 @@ public class PanelContent {
      */
     public void setUpdated(Date updated) {
         this.updated = updated;
-    }
-
-    /**
-     * 获取图片路径
-     *
-     * @return pic_url - 图片路径
-     */
-    public String getPicUrl() {
-        return picUrl;
-    }
-
-    /**
-     * 设置图片路径
-     *
-     * @param picUrl 图片路径
-     */
-    public void setPicUrl(String picUrl) {
-        this.picUrl = picUrl == null ? null : picUrl.trim();
     }
 }

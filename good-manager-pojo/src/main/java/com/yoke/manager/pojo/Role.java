@@ -9,17 +9,14 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer roleId;
 
-    /**
-     * 角色名称
-     */
-    private String name;
-
     private String description;
 
-    public Role(Integer roleId, String name, String description) {
+    private String name;
+
+    public Role(Integer roleId, String description, String name) {
         this.roleId = roleId;
-        this.name = name;
         this.description = description;
+        this.name = name;
     }
 
     public Role() {
@@ -41,24 +38,6 @@ public class Role {
     }
 
     /**
-     * 获取角色名称
-     *
-     * @return name - 角色名称
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * 设置角色名称
-     *
-     * @param name 角色名称
-     */
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    /**
      * @return description
      */
     public String getDescription() {
@@ -70,5 +49,19 @@ public class Role {
      */
     public void setDescription(String description) {
         this.description = description == null ? null : description.trim();
+    }
+
+    /**
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 }

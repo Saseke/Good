@@ -21,39 +21,41 @@
             <property name="suppressAllComments" value="true"/>
             <property name="suppressDate" value="true"/>
         </commentGenerator>
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/yoke?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC"
-                        userId="root" password="000000">
+        <jdbcConnection driverClass="${jdbc.driver}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.username}" password="${jdbc.password}">
             <property name="useInformationSchema" value="true"/>
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
-        <javaModelGenerator targetPackage="com.yoke.manager.pojo" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="${xml.modelPackage}" targetProject="${xml.resourcesProject}">
             <property name="constructorBased" value="true"/>
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
-        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="${xml.xmlPackage}" targetProject="${xml.resourcesProject}">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.yoke.manager.dao.mapper"
-                             targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${xml.mapperPackage}"
+                             targetProject="${xml.resourcesProject}">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
+        <!--
 
-        <table schema="yoke"
-               tableName="db_address"
-               domainObjectName="Address"
-               enableCountByExample="true"
-               enableUpdateByExample="true"
-               enableDeleteByExample="true"
-               enableSelectByExample="true"
-               enableSelectByPrimaryKey="true"
-               selectByExampleQueryId="true">
-            <generatedKey column="address_id" sqlStatement="MySql" identity="true" type="post"/>
-        </table>
+                <table schema="yoke"
+                       tableName="db_address"
+                       domainObjectName="Address"
+                       enableCountByExample="true"
+                       enableUpdateByExample="true"
+                       enableDeleteByExample="true"
+                       enableSelectByExample="true"
+                       enableSelectByPrimaryKey="true"
+                       selectByExampleQueryId="true">
+                    <generatedKey column="address_id" sqlStatement="MySql" identity="true" type="post"/>
+                </table>
+        -->
 
         <table tableName="db_item"
                schema="yoke"
@@ -66,153 +68,153 @@
                selectByExampleQueryId="true">
             <generatedKey column="item_id" sqlStatement="MySql" identity="true" type="post"/>
         </table>
+        <!--
 
+                <table tableName="db_item_cat"
+                       schema="yoke"
+                       domainObjectName="ItemCat"
+                       enableCountByExample="true"
+                       enableUpdateByExample="true"
+                       enableDeleteByExample="true"
+                       enableSelectByExample="true"
+                       enableSelectByPrimaryKey="true"
+                       selectByExampleQueryId="true">
+                    <generatedKey column="item_cat_id" sqlStatement="MySql" identity="true" type="post"/>
+                </table>
 
-        <table tableName="db_item_cat"
-               schema="yoke"
-               domainObjectName="ItemCat"
-               enableCountByExample="true"
-               enableUpdateByExample="true"
-               enableDeleteByExample="true"
-               enableSelectByExample="true"
-               enableSelectByPrimaryKey="true"
-               selectByExampleQueryId="true">
-            <generatedKey column="item_cat_id" sqlStatement="MySql" identity="true" type="post"/>
-        </table>
+                <table tableName="db_log"
+                       schema="yoke"
+                       domainObjectName="Log"
+                       enableCountByExample="true"
+                       enableUpdateByExample="true"
+                       enableDeleteByExample="true"
+                       enableSelectByExample="true"
+                       enableSelectByPrimaryKey="true"
+                       selectByExampleQueryId="true">
+                    <generatedKey column="log_id" sqlStatement="MySql" identity="true" type="post"/>
+                </table>
 
-        <table tableName="db_log"
-               schema="yoke"
-               domainObjectName="Log"
-               enableCountByExample="true"
-               enableUpdateByExample="true"
-               enableDeleteByExample="true"
-               enableSelectByExample="true"
-               enableSelectByPrimaryKey="true"
-               selectByExampleQueryId="true">
-            <generatedKey column="log_id" sqlStatement="MySql" identity="true" type="post"/>
-        </table>
+                <table tableName="db_member"
+                       schema="yoke"
+                       domainObjectName="Member"
+                       enableCountByExample="true"
+                       enableUpdateByExample="true"
+                       enableDeleteByExample="true"
+                       enableSelectByExample="true"
+                       enableSelectByPrimaryKey="true"
+                       selectByExampleQueryId="true">
+                    <generatedKey column="member_id" sqlStatement="MySql" identity="true" type="post"/>
+                </table>
 
-        <table tableName="db_member"
-               schema="yoke"
-               domainObjectName="Member"
-               enableCountByExample="true"
-               enableUpdateByExample="true"
-               enableDeleteByExample="true"
-               enableSelectByExample="true"
-               enableSelectByPrimaryKey="true"
-               selectByExampleQueryId="true">
-            <generatedKey column="member_id" sqlStatement="MySql" identity="true" type="post"/>
-        </table>
+                <table tableName="db_order"
+                       schema="yoke"
+                       domainObjectName="Order"
+                       enableCountByExample="true"
+                       enableUpdateByExample="true"
+                       enableDeleteByExample="true"
+                       enableSelectByExample="true"
+                       enableSelectByPrimaryKey="true"
+                       selectByExampleQueryId="true">
+                    <generatedKey column="order_id" sqlStatement="MySql" identity="true" type="post"/>
+                </table>
 
-        <table tableName="db_order"
-               schema="yoke"
-               domainObjectName="Order"
-               enableCountByExample="true"
-               enableUpdateByExample="true"
-               enableDeleteByExample="true"
-               enableSelectByExample="true"
-               enableSelectByPrimaryKey="true"
-               selectByExampleQueryId="true">
-            <generatedKey column="order_id" sqlStatement="MySql" identity="true" type="post"/>
-        </table>
+                <table tableName="db_order_item"
+                       schema="yoke"
+                       domainObjectName="OrderItem"
+                       enableCountByExample="true"
+                       enableUpdateByExample="true"
+                       enableDeleteByExample="true"
+                       enableSelectByExample="true"
+                       enableSelectByPrimaryKey="true"
+                       selectByExampleQueryId="true">
+                    <generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/>
+                </table>
 
-        <table tableName="db_order_item"
-               schema="yoke"
-               domainObjectName="OrderItem"
-               enableCountByExample="true"
-               enableUpdateByExample="true"
-               enableDeleteByExample="true"
-               enableSelectByExample="true"
-               enableSelectByPrimaryKey="true"
-               selectByExampleQueryId="true">
-            <generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/>
-        </table>
+                <table tableName="db_order_shipping"
+                       schema="yoke"
+                       domainObjectName="OrderShipping"
+                       enableCountByExample="true"
+                       enableUpdateByExample="true"
+                       enableDeleteByExample="true"
+                       enableSelectByExample="true"
+                       enableSelectByPrimaryKey="true"
+                       selectByExampleQueryId="true">
+                    <generatedKey column="order_id" sqlStatement="MySql" identity="true" type="post"/>
+                </table>
 
-        <table tableName="db_order_shipping"
-               schema="yoke"
-               domainObjectName="OrderShipping"
-               enableCountByExample="true"
-               enableUpdateByExample="true"
-               enableDeleteByExample="true"
-               enableSelectByExample="true"
-               enableSelectByPrimaryKey="true"
-               selectByExampleQueryId="true">
-            <generatedKey column="order_id" sqlStatement="MySql" identity="true" type="post"/>
-        </table>
+                <table tableName="db_panel"
+                       schema="yoke"
+                       domainObjectName="Panel"
+                       enableCountByExample="true"
+                       enableUpdateByPrimaryKey="true"
+                       enableInsert="true"
+                       enableDeleteByPrimaryKey="true"
+                       enableSelectByPrimaryKey="true">
+                    <generatedKey column="panel_id" sqlStatement="MySql" identity="true" type="post"/>
+                </table>
 
-        <table tableName="db_panel"
-               schema="yoke"
-               domainObjectName="Panel"
-               enableCountByExample="true"
-               enableUpdateByPrimaryKey="true"
-               enableInsert="true"
-               enableDeleteByPrimaryKey="true"
-               enableSelectByPrimaryKey="true">
-            <generatedKey column="panel_id" sqlStatement="MySql" identity="true" type="post"/>
-        </table>
+                <table tableName="db_permission"
+                       schema="yoke"
+                       domainObjectName="Permission"
+                       enableCountByExample="true"
+                       enableSelectByPrimaryKey="true"
+                       enableDeleteByPrimaryKey="true"
+                       enableUpdateByPrimaryKey="true"
+                       enableInsert="true">
+                    <generatedKey column="permission_id" sqlStatement="MySql" identity="true" type="post"/>
+                </table>
 
-        <table tableName="db_permission"
-               schema="yoke"
-               domainObjectName="Permission"
-               enableCountByExample="true"
-               enableSelectByPrimaryKey="true"
-               enableDeleteByPrimaryKey="true"
-               enableUpdateByPrimaryKey="true"
-               enableInsert="true">
-            <generatedKey column="permission_id" sqlStatement="MySql" identity="true" type="post"/>
-        </table>
+                <table tableName="db_role"
+                       schema="yoke"
+                       domainObjectName="Role"
+                       enableCountByExample="true"
+                       enableInsert="true"
+                       enableDeleteByPrimaryKey="true"
+                       enableDeleteByExample="true"
+                       enableSelectByExample="true">
+                    <generatedKey column="role_id" sqlStatement="MySql" identity="true" type="post"/>
+                </table>
 
-        <table tableName="db_role"
-               schema="yoke"
-               domainObjectName="Role"
-               enableCountByExample="true"
-               enableInsert="true"
-               enableDeleteByPrimaryKey="true"
-               enableDeleteByExample="true"
-               enableSelectByExample="true">
-            <generatedKey column="role_id" sqlStatement="MySql" identity="true" type="post"/>
-        </table>
+                <table tableName="db_role_perm"
+                       schema="yoke"
+                       domainObjectName="RolePermission"
+                       enableCountByExample="true"
+                       enableInsert="true"
+                       enableDeleteByExample="true"
+                       enableDeleteByPrimaryKey="true"
+                       enableSelectByExample="true"
+                       enableSelectByPrimaryKey="true"
+                       enableUpdateByExample="true"
+                       enableUpdateByPrimaryKey="true">
+                    <generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/>
+                </table>
 
-        <table tableName="db_role_perm"
-               schema="yoke"
-               domainObjectName="RolePermission"
-               enableCountByExample="true"
-               enableInsert="true"
-               enableDeleteByExample="true"
-               enableDeleteByPrimaryKey="true"
-               enableSelectByExample="true"
-               enableSelectByPrimaryKey="true"
-               enableUpdateByExample="true"
-               enableUpdateByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/>
-        </table>
+                <table tableName="db_user"
+                       schema="yoke"
+                       domainObjectName="User"
+                       enableCountByExample="true"
+                       enableDeleteByExample="true"
+                       enableDeleteByPrimaryKey="true"
+                       enableInsert="true"
+                       enableSelectByExample="true"
+                       enableSelectByPrimaryKey="true"
+                       enableUpdateByExample="true"
+                       enableUpdateByPrimaryKey="true">
+                    <generatedKey column="user_id" sqlStatement="MySql" identity="true" type="post"/>
+                </table>
 
-        <table tableName="db_user"
-               schema="yoke"
-               domainObjectName="User"
-               enableCountByExample="true"
-               enableDeleteByExample="true"
-               enableDeleteByPrimaryKey="true"
-               enableInsert="true"
-               enableSelectByExample="true"
-               enableSelectByPrimaryKey="true"
-               enableUpdateByExample="true"
-               enableUpdateByPrimaryKey="true">
-            <generatedKey column="user_id" sqlStatement="MySql" identity="true" type="post"/>
-        </table>
-
-        <table tableName="db_panel_content"
-               schema="yoke"
-               domainObjectName="PanelContent"
-               enableCountByExample="true"
-               enableDeleteByExample="true"
-               enableDeleteByPrimaryKey="true"
-               enableInsert="true"
-               enableSelectByExample="true"
-               enableSelectByPrimaryKey="true"
-               enableUpdateByExample="true"
-               enableUpdateByPrimaryKey="true">
-            <generatedKey column="panel_content_id" sqlStatement="MySql" identity="true" type="post"/>
-        </table>
+                <table tableName="db_panel_content"
+                       schema="yoke"
+                       domainObjectName="PanelContent"
+                       enableCountByExample="true"
+                       enableDeleteByExample="true"
+                       enableDeleteByPrimaryKey="true"
+                       enableInsert="true"
+                       enableSelectByExample="true"
+                       enableSelectByPrimaryKey="true"
+                       enableUpdateByExample="true"
+                       enableUpdateByPrimaryKey="true">
+                    <generatedKey column="panel_content_id" sqlStatement="MySql" identity="true" type="post"/>
+                </table>-->
     </context>
 </generatorConfiguration>

@@ -16,11 +16,8 @@ public class OrderShipping {
     @Column(name = "receiver_name")
     private String receiverName;
 
-    /**
-     * 收件人手机号
-     */
-    @Column(name = "receiver_phone")
-    private String receiverPhone;
+    @Column(name = "receiver_mobile")
+    private String receiverMobile;
 
     /**
      * 省份
@@ -35,7 +32,7 @@ public class OrderShipping {
     private String receiverCity;
 
     /**
-     * 区、县
+     * 区县
      */
     @Column(name = "receiver_district")
     private String receiverDistrict;
@@ -50,10 +47,10 @@ public class OrderShipping {
 
     private Date updated;
 
-    public OrderShipping(String orderId, String receiverName, String receiverPhone, String receiverState, String receiverCity, String receiverDistrict, String receiverAddress, Date created, Date updated) {
+    public OrderShipping(String orderId, String receiverName, String receiverMobile, String receiverState, String receiverCity, String receiverDistrict, String receiverAddress, Date created, Date updated) {
         this.orderId = orderId;
         this.receiverName = receiverName;
-        this.receiverPhone = receiverPhone;
+        this.receiverMobile = receiverMobile;
         this.receiverState = receiverState;
         this.receiverCity = receiverCity;
         this.receiverDistrict = receiverDistrict;
@@ -99,21 +96,17 @@ public class OrderShipping {
     }
 
     /**
-     * 获取收件人手机号
-     *
-     * @return receiver_phone - 收件人手机号
+     * @return receiver_mobile
      */
-    public String getReceiverPhone() {
-        return receiverPhone;
+    public String getReceiverMobile() {
+        return receiverMobile;
     }
 
     /**
-     * 设置收件人手机号
-     *
-     * @param receiverPhone 收件人手机号
+     * @param receiverMobile
      */
-    public void setReceiverPhone(String receiverPhone) {
-        this.receiverPhone = receiverPhone == null ? null : receiverPhone.trim();
+    public void setReceiverMobile(String receiverMobile) {
+        this.receiverMobile = receiverMobile == null ? null : receiverMobile.trim();
     }
 
     /**
@@ -153,18 +146,18 @@ public class OrderShipping {
     }
 
     /**
-     * 获取区、县
+     * 获取区县
      *
-     * @return receiver_district - 区、县
+     * @return receiver_district - 区县
      */
     public String getReceiverDistrict() {
         return receiverDistrict;
     }
 
     /**
-     * 设置区、县
+     * 设置区县
      *
-     * @param receiverDistrict 区、县
+     * @param receiverDistrict 区县
      */
     public void setReceiverDistrict(String receiverDistrict) {
         this.receiverDistrict = receiverDistrict == null ? null : receiverDistrict.trim();

@@ -6,14 +6,14 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="item_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <idArg column="id" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="title" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="sell_point" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
       <arg column="num" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="limit_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="image" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="cid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="c_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="created" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="updated" javaType="java.util.Date" jdbcType="TIMESTAMP" />
@@ -26,20 +26,20 @@
       WARNING - @mbg.generated
     -->
     <constructor>
-      <idArg column="item_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <idArg column="id" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="title" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="sell_point" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
       <arg column="num" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="limit_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="image" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="cid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="c_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="created" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="updated" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="sort_order" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="desc" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+      <arg column="description" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -110,14 +110,14 @@
     <!--
       WARNING - @mbg.generated
     -->
-    item_id, title, sell_point, price, num, limit_num, image, cid, status, created, updated, 
+    id, title, sell_point, price, num, limit_num, image, c_id, status, created, updated, 
     sort_order, remark
   </sql>
   <sql id="Blob_Column_List">
     <!--
       WARNING - @mbg.generated
     -->
-    desc
+    description
   </sql>
   <select id="selectByExampleWithBLOBs" parameterType="com.yoke.manager.pojo.ItemExample" resultMap="ResultMapWithBLOBs">
     <!--
@@ -181,8 +181,8 @@
     -->
     update db_item
     <set>
-      <if test="record.itemId != null">
-        item_id = #{record.itemId,jdbcType=BIGINT},
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=VARCHAR},
       </if>
       <if test="record.title != null">
         title = #{record.title,jdbcType=VARCHAR},
@@ -202,8 +202,8 @@
       <if test="record.image != null">
         image = #{record.image,jdbcType=VARCHAR},
       </if>
-      <if test="record.cid != null">
-        cid = #{record.cid,jdbcType=INTEGER},
+      <if test="record.cId != null">
+        c_id = #{record.cId,jdbcType=INTEGER},
       </if>
       <if test="record.status != null">
         status = #{record.status,jdbcType=INTEGER},
@@ -220,8 +220,8 @@
       <if test="record.remark != null">
         remark = #{record.remark,jdbcType=VARCHAR},
       </if>
-      <if test="record.desc != null">
-        desc = #{record.desc,jdbcType=LONGVARCHAR},
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -233,20 +233,20 @@
       WARNING - @mbg.generated
     -->
     update db_item
-    set item_id = #{record.itemId,jdbcType=BIGINT},
+    set id = #{record.id,jdbcType=VARCHAR},
       title = #{record.title,jdbcType=VARCHAR},
       sell_point = #{record.sellPoint,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=DECIMAL},
       num = #{record.num,jdbcType=INTEGER},
       limit_num = #{record.limitNum,jdbcType=INTEGER},
       image = #{record.image,jdbcType=VARCHAR},
-      cid = #{record.cid,jdbcType=INTEGER},
+      c_id = #{record.cId,jdbcType=INTEGER},
       status = #{record.status,jdbcType=INTEGER},
       created = #{record.created,jdbcType=TIMESTAMP},
       updated = #{record.updated,jdbcType=TIMESTAMP},
       sort_order = #{record.sortOrder,jdbcType=INTEGER},
       remark = #{record.remark,jdbcType=VARCHAR},
-      desc = #{record.desc,jdbcType=LONGVARCHAR}
+      description = #{record.description,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -256,14 +256,14 @@
       WARNING - @mbg.generated
     -->
     update db_item
-    set item_id = #{record.itemId,jdbcType=BIGINT},
+    set id = #{record.id,jdbcType=VARCHAR},
       title = #{record.title,jdbcType=VARCHAR},
       sell_point = #{record.sellPoint,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=DECIMAL},
       num = #{record.num,jdbcType=INTEGER},
       limit_num = #{record.limitNum,jdbcType=INTEGER},
       image = #{record.image,jdbcType=VARCHAR},
-      cid = #{record.cid,jdbcType=INTEGER},
+      c_id = #{record.cId,jdbcType=INTEGER},
       status = #{record.status,jdbcType=INTEGER},
       created = #{record.created,jdbcType=TIMESTAMP},
       updated = #{record.updated,jdbcType=TIMESTAMP},

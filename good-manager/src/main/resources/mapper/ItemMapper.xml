@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yoke.manager.dao.ItemMapper">
+<mapper namespace="ItemMapper">
   <resultMap id="BaseResultMap" type="com.yoke.manager.pojo.Item">
     <!--
       WARNING - @mbg.generated
@@ -246,7 +246,7 @@
       updated = #{record.updated,jdbcType=TIMESTAMP},
       sort_order = #{record.sortOrder,jdbcType=INTEGER},
       remark = #{record.remark,jdbcType=VARCHAR},
-      desc = #{record.desc,jdbcType=LONGVARCHAR}
+      description = #{record.desc,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

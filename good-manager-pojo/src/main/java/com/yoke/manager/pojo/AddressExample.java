@@ -164,6 +164,206 @@ public class AddressExample {
             return (Criteria) this;
         }
 
+        public Criteria andIsDefaultIsNull() {
+            addCriterion("is_default is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDefaultIsNotNull() {
+            addCriterion("is_default is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDefaultEqualTo(Byte value) {
+            addCriterion("is_default =", value, "isDefault");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDefaultNotEqualTo(Byte value) {
+            addCriterion("is_default <>", value, "isDefault");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDefaultGreaterThan(Byte value) {
+            addCriterion("is_default >", value, "isDefault");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDefaultGreaterThanOrEqualTo(Byte value) {
+            addCriterion("is_default >=", value, "isDefault");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDefaultLessThan(Byte value) {
+            addCriterion("is_default <", value, "isDefault");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDefaultLessThanOrEqualTo(Byte value) {
+            addCriterion("is_default <=", value, "isDefault");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDefaultIn(List<Byte> values) {
+            addCriterion("is_default in", values, "isDefault");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDefaultNotIn(List<Byte> values) {
+            addCriterion("is_default not in", values, "isDefault");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDefaultBetween(Byte value1, Byte value2) {
+            addCriterion("is_default between", value1, value2, "isDefault");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDefaultNotBetween(Byte value1, Byte value2) {
+            addCriterion("is_default not between", value1, value2, "isDefault");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameIsNull() {
+            addCriterion("street_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameIsNotNull() {
+            addCriterion("street_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameEqualTo(String value) {
+            addCriterion("street_name =", value, "streetName");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameNotEqualTo(String value) {
+            addCriterion("street_name <>", value, "streetName");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameGreaterThan(String value) {
+            addCriterion("street_name >", value, "streetName");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameGreaterThanOrEqualTo(String value) {
+            addCriterion("street_name >=", value, "streetName");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameLessThan(String value) {
+            addCriterion("street_name <", value, "streetName");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameLessThanOrEqualTo(String value) {
+            addCriterion("street_name <=", value, "streetName");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameLike(String value) {
+            addCriterion("street_name like", value, "streetName");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameNotLike(String value) {
+            addCriterion("street_name not like", value, "streetName");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameIn(List<String> values) {
+            addCriterion("street_name in", values, "streetName");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameNotIn(List<String> values) {
+            addCriterion("street_name not in", values, "streetName");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameBetween(String value1, String value2) {
+            addCriterion("street_name between", value1, value2, "streetName");
+            return (Criteria) this;
+        }
+
+        public Criteria andStreetNameNotBetween(String value1, String value2) {
+            addCriterion("street_name not between", value1, value2, "streetName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelIsNull() {
+            addCriterion("tel is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelIsNotNull() {
+            addCriterion("tel is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelEqualTo(String value) {
+            addCriterion("tel =", value, "tel");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelNotEqualTo(String value) {
+            addCriterion("tel <>", value, "tel");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelGreaterThan(String value) {
+            addCriterion("tel >", value, "tel");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelGreaterThanOrEqualTo(String value) {
+            addCriterion("tel >=", value, "tel");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelLessThan(String value) {
+            addCriterion("tel <", value, "tel");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelLessThanOrEqualTo(String value) {
+            addCriterion("tel <=", value, "tel");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelLike(String value) {
+            addCriterion("tel like", value, "tel");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelNotLike(String value) {
+            addCriterion("tel not like", value, "tel");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelIn(List<String> values) {
+            addCriterion("tel in", values, "tel");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelNotIn(List<String> values) {
+            addCriterion("tel not in", values, "tel");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelBetween(String value1, String value2) {
+            addCriterion("tel between", value1, value2, "tel");
+            return (Criteria) this;
+        }
+
+        public Criteria andTelNotBetween(String value1, String value2) {
+            addCriterion("tel not between", value1, value2, "tel");
+            return (Criteria) this;
+        }
+
         public Criteria andUserIdIsNull() {
             addCriterion("user_id is null");
             return (Criteria) this;
@@ -291,206 +491,6 @@ public class AddressExample {
 
         public Criteria andUserNameNotBetween(String value1, String value2) {
             addCriterion("user_name not between", value1, value2, "userName");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelIsNull() {
-            addCriterion("tel is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelIsNotNull() {
-            addCriterion("tel is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelEqualTo(String value) {
-            addCriterion("tel =", value, "tel");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelNotEqualTo(String value) {
-            addCriterion("tel <>", value, "tel");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelGreaterThan(String value) {
-            addCriterion("tel >", value, "tel");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelGreaterThanOrEqualTo(String value) {
-            addCriterion("tel >=", value, "tel");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelLessThan(String value) {
-            addCriterion("tel <", value, "tel");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelLessThanOrEqualTo(String value) {
-            addCriterion("tel <=", value, "tel");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelLike(String value) {
-            addCriterion("tel like", value, "tel");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelNotLike(String value) {
-            addCriterion("tel not like", value, "tel");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelIn(List<String> values) {
-            addCriterion("tel in", values, "tel");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelNotIn(List<String> values) {
-            addCriterion("tel not in", values, "tel");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelBetween(String value1, String value2) {
-            addCriterion("tel between", value1, value2, "tel");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelNotBetween(String value1, String value2) {
-            addCriterion("tel not between", value1, value2, "tel");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameIsNull() {
-            addCriterion("street_name is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameIsNotNull() {
-            addCriterion("street_name is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameEqualTo(String value) {
-            addCriterion("street_name =", value, "streetName");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameNotEqualTo(String value) {
-            addCriterion("street_name <>", value, "streetName");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameGreaterThan(String value) {
-            addCriterion("street_name >", value, "streetName");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameGreaterThanOrEqualTo(String value) {
-            addCriterion("street_name >=", value, "streetName");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameLessThan(String value) {
-            addCriterion("street_name <", value, "streetName");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameLessThanOrEqualTo(String value) {
-            addCriterion("street_name <=", value, "streetName");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameLike(String value) {
-            addCriterion("street_name like", value, "streetName");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameNotLike(String value) {
-            addCriterion("street_name not like", value, "streetName");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameIn(List<String> values) {
-            addCriterion("street_name in", values, "streetName");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameNotIn(List<String> values) {
-            addCriterion("street_name not in", values, "streetName");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameBetween(String value1, String value2) {
-            addCriterion("street_name between", value1, value2, "streetName");
-            return (Criteria) this;
-        }
-
-        public Criteria andStreetNameNotBetween(String value1, String value2) {
-            addCriterion("street_name not between", value1, value2, "streetName");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDefaultIsNull() {
-            addCriterion("is_default is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDefaultIsNotNull() {
-            addCriterion("is_default is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDefaultEqualTo(Byte value) {
-            addCriterion("is_default =", value, "isDefault");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDefaultNotEqualTo(Byte value) {
-            addCriterion("is_default <>", value, "isDefault");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDefaultGreaterThan(Byte value) {
-            addCriterion("is_default >", value, "isDefault");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDefaultGreaterThanOrEqualTo(Byte value) {
-            addCriterion("is_default >=", value, "isDefault");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDefaultLessThan(Byte value) {
-            addCriterion("is_default <", value, "isDefault");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDefaultLessThanOrEqualTo(Byte value) {
-            addCriterion("is_default <=", value, "isDefault");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDefaultIn(List<Byte> values) {
-            addCriterion("is_default in", values, "isDefault");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDefaultNotIn(List<Byte> values) {
-            addCriterion("is_default not in", values, "isDefault");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDefaultBetween(Byte value1, Byte value2) {
-            addCriterion("is_default between", value1, value2, "isDefault");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDefaultNotBetween(Byte value1, Byte value2) {
-            addCriterion("is_default not between", value1, value2, "isDefault");
             return (Criteria) this;
         }
     }

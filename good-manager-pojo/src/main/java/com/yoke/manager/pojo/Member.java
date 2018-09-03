@@ -11,80 +11,47 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long memberId;
 
-    private String password;
-
-    /**
-     * 用户名
-     */
-    private String username;
-
-    /**
-     * 邮箱
-     */
-    private String email;
-
-    /**
-     * 手机号
-     */
-    private String phone;
-
-    /**
-     * 创建时间
-     */
-    private Date created;
-
-    /**
-     * 更新时间
-     */
-    private Date updated;
-
-    /**
-     * 性别
-     */
-    private String sex;
-
-    /**
-     * 地址
-     */
     private String address;
 
-    /**
-     * 状态
-     */
-    private Integer state;
+    private BigDecimal balance;
 
-    /**
-     * 头像
-     */
+    private Date created;
+
+    private String description;
+
+    private String email;
+
     private String file;
 
-    /**
-     * 描述
-     */
-    private String description;
+    private String password;
+
+    private String phone;
 
     private Integer point;
 
-    /**
-     * 余额
-     */
-    private BigDecimal balance;
+    private String sex;
 
-    public Member(Long memberId, String password, String username, String email, String phone, Date created, Date updated, String sex, String address, Integer state, String file, String description, Integer point, BigDecimal balance) {
+    private Integer state;
+
+    private Date updated;
+
+    private String username;
+
+    public Member(Long memberId, String address, BigDecimal balance, Date created, String description, String email, String file, String password, String phone, Integer point, String sex, Integer state, Date updated, String username) {
         this.memberId = memberId;
-        this.password = password;
-        this.username = username;
-        this.email = email;
-        this.phone = phone;
-        this.created = created;
-        this.updated = updated;
-        this.sex = sex;
         this.address = address;
-        this.state = state;
-        this.file = file;
-        this.description = description;
-        this.point = point;
         this.balance = balance;
+        this.created = created;
+        this.description = description;
+        this.email = email;
+        this.file = file;
+        this.password = password;
+        this.phone = phone;
+        this.point = point;
+        this.sex = sex;
+        this.state = state;
+        this.updated = updated;
+        this.username = username;
     }
 
     public Member() {
@@ -106,6 +73,90 @@ public class Member {
     }
 
     /**
+     * @return address
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    /**
+     * @param address
+     */
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
+    }
+
+    /**
+     * @return balance
+     */
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    /**
+     * @param balance
+     */
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
+
+    /**
+     * @return created
+     */
+    public Date getCreated() {
+        return created;
+    }
+
+    /**
+     * @param created
+     */
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    /**
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * @param description
+     */
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
+    }
+
+    /**
+     * @return email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email
+     */
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
+    /**
+     * @return file
+     */
+    public String getFile() {
+        return file;
+    }
+
+    /**
+     * @param file
+     */
+    public void setFile(String file) {
+        this.file = file == null ? null : file.trim();
+    }
+
+    /**
      * @return password
      */
     public String getPassword() {
@@ -120,183 +171,17 @@ public class Member {
     }
 
     /**
-     * 获取用户名
-     *
-     * @return username - 用户名
-     */
-    public String getUsername() {
-        return username;
-    }
-
-    /**
-     * 设置用户名
-     *
-     * @param username 用户名
-     */
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
-    }
-
-    /**
-     * 获取邮箱
-     *
-     * @return email - 邮箱
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * 设置邮箱
-     *
-     * @param email 邮箱
-     */
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
-
-    /**
-     * 获取手机号
-     *
-     * @return phone - 手机号
+     * @return phone
      */
     public String getPhone() {
         return phone;
     }
 
     /**
-     * 设置手机号
-     *
-     * @param phone 手机号
+     * @param phone
      */
     public void setPhone(String phone) {
         this.phone = phone == null ? null : phone.trim();
-    }
-
-    /**
-     * 获取创建时间
-     *
-     * @return created - 创建时间
-     */
-    public Date getCreated() {
-        return created;
-    }
-
-    /**
-     * 设置创建时间
-     *
-     * @param created 创建时间
-     */
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    /**
-     * 获取更新时间
-     *
-     * @return updated - 更新时间
-     */
-    public Date getUpdated() {
-        return updated;
-    }
-
-    /**
-     * 设置更新时间
-     *
-     * @param updated 更新时间
-     */
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
-
-    /**
-     * 获取性别
-     *
-     * @return sex - 性别
-     */
-    public String getSex() {
-        return sex;
-    }
-
-    /**
-     * 设置性别
-     *
-     * @param sex 性别
-     */
-    public void setSex(String sex) {
-        this.sex = sex == null ? null : sex.trim();
-    }
-
-    /**
-     * 获取地址
-     *
-     * @return address - 地址
-     */
-    public String getAddress() {
-        return address;
-    }
-
-    /**
-     * 设置地址
-     *
-     * @param address 地址
-     */
-    public void setAddress(String address) {
-        this.address = address == null ? null : address.trim();
-    }
-
-    /**
-     * 获取状态
-     *
-     * @return state - 状态
-     */
-    public Integer getState() {
-        return state;
-    }
-
-    /**
-     * 设置状态
-     *
-     * @param state 状态
-     */
-    public void setState(Integer state) {
-        this.state = state;
-    }
-
-    /**
-     * 获取头像
-     *
-     * @return file - 头像
-     */
-    public String getFile() {
-        return file;
-    }
-
-    /**
-     * 设置头像
-     *
-     * @param file 头像
-     */
-    public void setFile(String file) {
-        this.file = file == null ? null : file.trim();
-    }
-
-    /**
-     * 获取描述
-     *
-     * @return description - 描述
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    /**
-     * 设置描述
-     *
-     * @param description 描述
-     */
-    public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
     }
 
     /**
@@ -314,20 +199,58 @@ public class Member {
     }
 
     /**
-     * 获取余额
-     *
-     * @return balance - 余额
+     * @return sex
      */
-    public BigDecimal getBalance() {
-        return balance;
+    public String getSex() {
+        return sex;
     }
 
     /**
-     * 设置余额
-     *
-     * @param balance 余额
+     * @param sex
      */
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
+    }
+
+    /**
+     * @return state
+     */
+    public Integer getState() {
+        return state;
+    }
+
+    /**
+     * @param state
+     */
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
+    /**
+     * @return updated
+     */
+    public Date getUpdated() {
+        return updated;
+    }
+
+    /**
+     * @param updated
+     */
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
+
+    /**
+     * @return username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * @param username
+     */
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 }

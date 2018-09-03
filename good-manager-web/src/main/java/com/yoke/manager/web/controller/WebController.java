@@ -1,8 +1,8 @@
 package com.yoke.manager.web.controller;
 
-import com.yoke.manager.dao.AddressMapper;
-import com.yoke.manager.pojo.Address;
+import com.yoke.manager.dao.test.AddressMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +13,7 @@ public class WebController {
     private AddressMapper addressMapper;
 
     @GetMapping("/test")
-    public Address test() {
-        return addressMapper.selectByPrimaryKey(1);
+    public String test() {
+        return "te";
     }
 }

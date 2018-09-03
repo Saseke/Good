@@ -17,7 +17,7 @@ public class Order {
     private BigDecimal payment;
 
     /**
-     * 支付类型:1.在线支付,2货到付款
+     * 支付方式
      */
     @Column(name = "payment_type")
     private Integer paymentType;
@@ -28,9 +28,6 @@ public class Order {
     @Column(name = "post_fee")
     private BigDecimal postFee;
 
-    /**
-     * 状态 0未付款 1已付款 2未发货 3已发货 4交易成功 5交易关闭 6交易失败
-     */
     private Integer status;
 
     @Column(name = "create_time")
@@ -39,21 +36,12 @@ public class Order {
     @Column(name = "update_time")
     private Date updateTime;
 
-    /**
-     * 付款时间
-     */
     @Column(name = "payment_time")
     private Date paymentTime;
 
-    /**
-     * 交易完成时间
-     */
     @Column(name = "end_time")
     private Date endTime;
 
-    /**
-     * 交易关闭时间
-     */
     @Column(name = "close_time")
     private Date closeTime;
 
@@ -81,24 +69,15 @@ public class Order {
     @Column(name = "buyer_message")
     private String buyerMessage;
 
-    /**
-     * 买家昵称
-     */
     @Column(name = "buyer_nick")
     private String buyerNick;
 
-    /**
-     * 卖家id
-     */
     @Column(name = "seller_id")
     private Long sellerId;
 
     @Column(name = "seller_nick")
     private String sellerNick;
 
-    /**
-     * 买家是否已经评价
-     */
     @Column(name = "buyer_comment")
     private Byte buyerComment;
 
@@ -160,18 +139,18 @@ public class Order {
     }
 
     /**
-     * 获取支付类型:1.在线支付,2货到付款
+     * 获取支付方式
      *
-     * @return payment_type - 支付类型:1.在线支付,2货到付款
+     * @return payment_type - 支付方式
      */
     public Integer getPaymentType() {
         return paymentType;
     }
 
     /**
-     * 设置支付类型:1.在线支付,2货到付款
+     * 设置支付方式
      *
-     * @param paymentType 支付类型:1.在线支付,2货到付款
+     * @param paymentType 支付方式
      */
     public void setPaymentType(Integer paymentType) {
         this.paymentType = paymentType;
@@ -196,18 +175,14 @@ public class Order {
     }
 
     /**
-     * 获取状态 0未付款 1已付款 2未发货 3已发货 4交易成功 5交易关闭 6交易失败
-     *
-     * @return status - 状态 0未付款 1已付款 2未发货 3已发货 4交易成功 5交易关闭 6交易失败
+     * @return status
      */
     public Integer getStatus() {
         return status;
     }
 
     /**
-     * 设置状态 0未付款 1已付款 2未发货 3已发货 4交易成功 5交易关闭 6交易失败
-     *
-     * @param status 状态 0未付款 1已付款 2未发货 3已发货 4交易成功 5交易关闭 6交易失败
+     * @param status
      */
     public void setStatus(Integer status) {
         this.status = status;
@@ -242,54 +217,42 @@ public class Order {
     }
 
     /**
-     * 获取付款时间
-     *
-     * @return payment_time - 付款时间
+     * @return payment_time
      */
     public Date getPaymentTime() {
         return paymentTime;
     }
 
     /**
-     * 设置付款时间
-     *
-     * @param paymentTime 付款时间
+     * @param paymentTime
      */
     public void setPaymentTime(Date paymentTime) {
         this.paymentTime = paymentTime;
     }
 
     /**
-     * 获取交易完成时间
-     *
-     * @return end_time - 交易完成时间
+     * @return end_time
      */
     public Date getEndTime() {
         return endTime;
     }
 
     /**
-     * 设置交易完成时间
-     *
-     * @param endTime 交易完成时间
+     * @param endTime
      */
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
 
     /**
-     * 获取交易关闭时间
-     *
-     * @return close_time - 交易关闭时间
+     * @return close_time
      */
     public Date getCloseTime() {
         return closeTime;
     }
 
     /**
-     * 设置交易关闭时间
-     *
-     * @param closeTime 交易关闭时间
+     * @param closeTime
      */
     public void setCloseTime(Date closeTime) {
         this.closeTime = closeTime;
@@ -368,36 +331,28 @@ public class Order {
     }
 
     /**
-     * 获取买家昵称
-     *
-     * @return buyer_nick - 买家昵称
+     * @return buyer_nick
      */
     public String getBuyerNick() {
         return buyerNick;
     }
 
     /**
-     * 设置买家昵称
-     *
-     * @param buyerNick 买家昵称
+     * @param buyerNick
      */
     public void setBuyerNick(String buyerNick) {
         this.buyerNick = buyerNick == null ? null : buyerNick.trim();
     }
 
     /**
-     * 获取卖家id
-     *
-     * @return seller_id - 卖家id
+     * @return seller_id
      */
     public Long getSellerId() {
         return sellerId;
     }
 
     /**
-     * 设置卖家id
-     *
-     * @param sellerId 卖家id
+     * @param sellerId
      */
     public void setSellerId(Long sellerId) {
         this.sellerId = sellerId;
@@ -418,18 +373,14 @@ public class Order {
     }
 
     /**
-     * 获取买家是否已经评价
-     *
-     * @return buyer_comment - 买家是否已经评价
+     * @return buyer_comment
      */
     public Byte getBuyerComment() {
         return buyerComment;
     }
 
     /**
-     * 设置买家是否已经评价
-     *
-     * @param buyerComment 买家是否已经评价
+     * @param buyerComment
      */
     public void setBuyerComment(Byte buyerComment) {
         this.buyerComment = buyerComment;

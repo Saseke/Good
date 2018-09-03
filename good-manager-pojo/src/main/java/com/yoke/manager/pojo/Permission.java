@@ -9,14 +9,8 @@ public class Permission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer permissionId;
 
-    /**
-     * 权限名
-     */
     private String name;
 
-    /**
-     * 权限路径
-     */
     private String permission;
 
     public Permission(Integer permissionId, String name, String permission) {
@@ -44,36 +38,28 @@ public class Permission {
     }
 
     /**
-     * 获取权限名
-     *
-     * @return name - 权限名
+     * @return name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 设置权限名
-     *
-     * @param name 权限名
+     * @param name
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
 
     /**
-     * 获取权限路径
-     *
-     * @return permission - 权限路径
+     * @return permission
      */
     public String getPermission() {
         return permission;
     }
 
     /**
-     * 设置权限路径
-     *
-     * @param permission 权限路径
+     * @param permission
      */
     public void setPermission(String permission) {
         this.permission = permission == null ? null : permission.trim();

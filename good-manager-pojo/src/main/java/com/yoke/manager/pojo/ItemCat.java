@@ -10,52 +10,37 @@ public class ItemCat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long itemCatId;
 
-    /**
-     * 父id为0表示一级栏目
-     */
-    @Column(name = "parent_id")
-    private Long parentId;
+    private Date created;
+
+    private String icon;
+
+    @Column(name = "is_parent")
+    private Byte isParent;
 
     private String name;
 
-    /**
-     * 状态1启用,0禁用
-     */
-    private Integer state;
+    @Column(name = "parent_id")
+    private Long parentId;
+
+    private String remark;
 
     @Column(name = "sort_order")
     private Integer sortOrder;
 
-    /**
-     * 是否为父分类
-     */
-    @Column(name = "is_parent")
-    private Byte isParent;
-
-    /**
-     * 图标
-     */
-    private String icon;
-
-    /**
-     * 备注
-     */
-    private String remark;
-
-    private Date created;
+    private Integer state;
 
     private Date updated;
 
-    public ItemCat(Long itemCatId, Long parentId, String name, Integer state, Integer sortOrder, Byte isParent, String icon, String remark, Date created, Date updated) {
+    public ItemCat(Long itemCatId, Date created, String icon, Byte isParent, String name, Long parentId, String remark, Integer sortOrder, Integer state, Date updated) {
         this.itemCatId = itemCatId;
-        this.parentId = parentId;
-        this.name = name;
-        this.state = state;
-        this.sortOrder = sortOrder;
-        this.isParent = isParent;
-        this.icon = icon;
-        this.remark = remark;
         this.created = created;
+        this.icon = icon;
+        this.isParent = isParent;
+        this.name = name;
+        this.parentId = parentId;
+        this.remark = remark;
+        this.sortOrder = sortOrder;
+        this.state = state;
         this.updated = updated;
     }
 
@@ -78,21 +63,45 @@ public class ItemCat {
     }
 
     /**
-     * 获取父id为0表示一级栏目
-     *
-     * @return parent_id - 父id为0表示一级栏目
+     * @return created
      */
-    public Long getParentId() {
-        return parentId;
+    public Date getCreated() {
+        return created;
     }
 
     /**
-     * 设置父id为0表示一级栏目
-     *
-     * @param parentId 父id为0表示一级栏目
+     * @param created
      */
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    /**
+     * @return icon
+     */
+    public String getIcon() {
+        return icon;
+    }
+
+    /**
+     * @param icon
+     */
+    public void setIcon(String icon) {
+        this.icon = icon == null ? null : icon.trim();
+    }
+
+    /**
+     * @return is_parent
+     */
+    public Byte getIsParent() {
+        return isParent;
+    }
+
+    /**
+     * @param isParent
+     */
+    public void setIsParent(Byte isParent) {
+        this.isParent = isParent;
     }
 
     /**
@@ -110,21 +119,31 @@ public class ItemCat {
     }
 
     /**
-     * 获取状态1启用,0禁用
-     *
-     * @return state - 状态1启用,0禁用
+     * @return parent_id
      */
-    public Integer getState() {
-        return state;
+    public Long getParentId() {
+        return parentId;
     }
 
     /**
-     * 设置状态1启用,0禁用
-     *
-     * @param state 状态1启用,0禁用
+     * @param parentId
      */
-    public void setState(Integer state) {
-        this.state = state;
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
+
+    /**
+     * @return remark
+     */
+    public String getRemark() {
+        return remark;
+    }
+
+    /**
+     * @param remark
+     */
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 
     /**
@@ -142,71 +161,17 @@ public class ItemCat {
     }
 
     /**
-     * 获取是否为父分类
-     *
-     * @return is_parent - 是否为父分类
+     * @return state
      */
-    public Byte getIsParent() {
-        return isParent;
+    public Integer getState() {
+        return state;
     }
 
     /**
-     * 设置是否为父分类
-     *
-     * @param isParent 是否为父分类
+     * @param state
      */
-    public void setIsParent(Byte isParent) {
-        this.isParent = isParent;
-    }
-
-    /**
-     * 获取图标
-     *
-     * @return icon - 图标
-     */
-    public String getIcon() {
-        return icon;
-    }
-
-    /**
-     * 设置图标
-     *
-     * @param icon 图标
-     */
-    public void setIcon(String icon) {
-        this.icon = icon == null ? null : icon.trim();
-    }
-
-    /**
-     * 获取备注
-     *
-     * @return remark - 备注
-     */
-    public String getRemark() {
-        return remark;
-    }
-
-    /**
-     * 设置备注
-     *
-     * @param remark 备注
-     */
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
-    }
-
-    /**
-     * @return created
-     */
-    public Date getCreated() {
-        return created;
-    }
-
-    /**
-     * @param created
-     */
-    public void setCreated(Date created) {
-        this.created = created;
+    public void setState(Integer state) {
+        this.state = state;
     }
 
     /**

@@ -8,16 +8,16 @@ public class RolePermission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "role_id")
-    private Integer roleId;
-
     @Column(name = "permission_id")
     private Integer permissionId;
 
-    public RolePermission(Integer id, Integer roleId, Integer permissionId) {
+    @Column(name = "role_id")
+    private Integer roleId;
+
+    public RolePermission(Integer id, Integer permissionId, Integer roleId) {
         this.id = id;
-        this.roleId = roleId;
         this.permissionId = permissionId;
+        this.roleId = roleId;
     }
 
     public RolePermission() {
@@ -39,20 +39,6 @@ public class RolePermission {
     }
 
     /**
-     * @return role_id
-     */
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    /**
-     * @param roleId
-     */
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
-    }
-
-    /**
      * @return permission_id
      */
     public Integer getPermissionId() {
@@ -64,5 +50,19 @@ public class RolePermission {
      */
     public void setPermissionId(Integer permissionId) {
         this.permissionId = permissionId;
+    }
+
+    /**
+     * @return role_id
+     */
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    /**
+     * @param roleId
+     */
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 }

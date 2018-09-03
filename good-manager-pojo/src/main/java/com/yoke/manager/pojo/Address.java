@@ -9,36 +9,27 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long addressId;
 
+    @Column(name = "is_default")
+    private Byte isDefault;
+
+    @Column(name = "street_name")
+    private String streetName;
+
+    private String tel;
+
     @Column(name = "user_id")
     private Long userId;
 
     @Column(name = "user_name")
     private String userName;
 
-    /**
-     * 电话
-     */
-    private String tel;
-
-    /**
-     * 街区名字
-     */
-    @Column(name = "street_name")
-    private String streetName;
-
-    /**
-     * 是否为默认地址
-     */
-    @Column(name = "is_default")
-    private Byte isDefault;
-
-    public Address(Long addressId, Long userId, String userName, String tel, String streetName, Byte isDefault) {
+    public Address(Long addressId, Byte isDefault, String streetName, String tel, Long userId, String userName) {
         this.addressId = addressId;
+        this.isDefault = isDefault;
+        this.streetName = streetName;
+        this.tel = tel;
         this.userId = userId;
         this.userName = userName;
-        this.tel = tel;
-        this.streetName = streetName;
-        this.isDefault = isDefault;
     }
 
     public Address() {
@@ -57,6 +48,48 @@ public class Address {
      */
     public void setAddressId(Long addressId) {
         this.addressId = addressId;
+    }
+
+    /**
+     * @return is_default
+     */
+    public Byte getIsDefault() {
+        return isDefault;
+    }
+
+    /**
+     * @param isDefault
+     */
+    public void setIsDefault(Byte isDefault) {
+        this.isDefault = isDefault;
+    }
+
+    /**
+     * @return street_name
+     */
+    public String getStreetName() {
+        return streetName;
+    }
+
+    /**
+     * @param streetName
+     */
+    public void setStreetName(String streetName) {
+        this.streetName = streetName == null ? null : streetName.trim();
+    }
+
+    /**
+     * @return tel
+     */
+    public String getTel() {
+        return tel;
+    }
+
+    /**
+     * @param tel
+     */
+    public void setTel(String tel) {
+        this.tel = tel == null ? null : tel.trim();
     }
 
     /**
@@ -85,59 +118,5 @@ public class Address {
      */
     public void setUserName(String userName) {
         this.userName = userName == null ? null : userName.trim();
-    }
-
-    /**
-     * 获取电话
-     *
-     * @return tel - 电话
-     */
-    public String getTel() {
-        return tel;
-    }
-
-    /**
-     * 设置电话
-     *
-     * @param tel 电话
-     */
-    public void setTel(String tel) {
-        this.tel = tel == null ? null : tel.trim();
-    }
-
-    /**
-     * 获取街区名字
-     *
-     * @return street_name - 街区名字
-     */
-    public String getStreetName() {
-        return streetName;
-    }
-
-    /**
-     * 设置街区名字
-     *
-     * @param streetName 街区名字
-     */
-    public void setStreetName(String streetName) {
-        this.streetName = streetName == null ? null : streetName.trim();
-    }
-
-    /**
-     * 获取是否为默认地址
-     *
-     * @return is_default - 是否为默认地址
-     */
-    public Byte getIsDefault() {
-        return isDefault;
-    }
-
-    /**
-     * 设置是否为默认地址
-     *
-     * @param isDefault 是否为默认地址
-     */
-    public void setIsDefault(Byte isDefault) {
-        this.isDefault = isDefault;
     }
 }

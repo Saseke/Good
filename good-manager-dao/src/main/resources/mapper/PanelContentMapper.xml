@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yoke.manager.dao.PanelContentMapper">
+<mapper namespace="PanelContentMapper">
   <resultMap id="BaseResultMap" type="com.yoke.manager.pojo.PanelContent">
     <!--
       WARNING - @mbg.generated
     -->
     <constructor>
       <idArg column="panel_content_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="created" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="panel_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="pic_url" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="product_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="sort_order" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="created" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="updated" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="pic_url" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -83,7 +83,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    panel_content_id, panel_id, product_id, sort_order, created, updated, pic_url
+    panel_content_id, created, panel_id, pic_url, product_id, sort_order, updated
   </sql>
   <select id="selectByExample" parameterType="com.yoke.manager.pojo.PanelContentExample" resultMap="BaseResultMap">
     <!--
@@ -129,8 +129,14 @@
       <if test="record.panelContentId != null">
         panel_content_id = #{record.panelContentId,jdbcType=INTEGER},
       </if>
+      <if test="record.created != null">
+        created = #{record.created,jdbcType=TIMESTAMP},
+      </if>
       <if test="record.panelId != null">
         panel_id = #{record.panelId,jdbcType=INTEGER},
+      </if>
+      <if test="record.picUrl != null">
+        pic_url = #{record.picUrl,jdbcType=VARCHAR},
       </if>
       <if test="record.productId != null">
         product_id = #{record.productId,jdbcType=BIGINT},
@@ -138,14 +144,8 @@
       <if test="record.sortOrder != null">
         sort_order = #{record.sortOrder,jdbcType=INTEGER},
       </if>
-      <if test="record.created != null">
-        created = #{record.created,jdbcType=TIMESTAMP},
-      </if>
       <if test="record.updated != null">
         updated = #{record.updated,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.picUrl != null">
-        pic_url = #{record.picUrl,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -158,12 +158,12 @@
     -->
     update db_panel_content
     set panel_content_id = #{record.panelContentId,jdbcType=INTEGER},
+      created = #{record.created,jdbcType=TIMESTAMP},
       panel_id = #{record.panelId,jdbcType=INTEGER},
+      pic_url = #{record.picUrl,jdbcType=VARCHAR},
       product_id = #{record.productId,jdbcType=BIGINT},
       sort_order = #{record.sortOrder,jdbcType=INTEGER},
-      created = #{record.created,jdbcType=TIMESTAMP},
-      updated = #{record.updated,jdbcType=TIMESTAMP},
-      pic_url = #{record.picUrl,jdbcType=VARCHAR}
+      updated = #{record.updated,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

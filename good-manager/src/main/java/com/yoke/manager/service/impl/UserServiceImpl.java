@@ -1,6 +1,6 @@
 package com.yoke.manager.service.impl;
 
-import com.yoke.manager.dao.UserMapper;
+import com.yoke.manager.dao.test.UserMapper;
 import com.yoke.manager.pojo.User;
 import com.yoke.manager.pojo.UserExample;
 import com.yoke.manager.service.UserService;

@@ -10,57 +10,39 @@ public class Log {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer logId;
 
-    private String name;
-
-    private String url;
-
-    /**
-     * 请求类型
-     */
-    @Column(name = "request_type")
-    private String requestType;
-
-    /**
-     * 请求参数类型
-     */
-    @Column(name = "request_param")
-    private String requestParam;
-
-    /**
-     * 用户
-     */
-    private String user;
-
-    /**
-     * IP
-     */
-    private String ip;
-
-    /**
-     * IP信息
-     */
-    @Column(name = "ip_info")
-    private String ipInfo;
-
-    /**
-     * 次数
-     */
-    private Integer time;
-
     @Column(name = "create_date")
     private Date createDate;
 
-    public Log(Integer logId, String name, String url, String requestType, String requestParam, String user, String ip, String ipInfo, Integer time, Date createDate) {
+    private String ip;
+
+    @Column(name = "ip_info")
+    private String ipInfo;
+
+    private String name;
+
+    @Column(name = "request_param")
+    private String requestParam;
+
+    @Column(name = "request_type")
+    private String requestType;
+
+    private Integer time;
+
+    private String url;
+
+    private String user;
+
+    public Log(Integer logId, Date createDate, String ip, String ipInfo, String name, String requestParam, String requestType, Integer time, String url, String user) {
         this.logId = logId;
-        this.name = name;
-        this.url = url;
-        this.requestType = requestType;
-        this.requestParam = requestParam;
-        this.user = user;
+        this.createDate = createDate;
         this.ip = ip;
         this.ipInfo = ipInfo;
+        this.name = name;
+        this.requestParam = requestParam;
+        this.requestType = requestType;
         this.time = time;
-        this.createDate = createDate;
+        this.url = url;
+        this.user = user;
     }
 
     public Log() {
@@ -82,6 +64,48 @@ public class Log {
     }
 
     /**
+     * @return create_date
+     */
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    /**
+     * @param createDate
+     */
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    /**
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    /**
+     * @param ip
+     */
+    public void setIp(String ip) {
+        this.ip = ip == null ? null : ip.trim();
+    }
+
+    /**
+     * @return ip_info
+     */
+    public String getIpInfo() {
+        return ipInfo;
+    }
+
+    /**
+     * @param ipInfo
+     */
+    public void setIpInfo(String ipInfo) {
+        this.ipInfo = ipInfo == null ? null : ipInfo.trim();
+    }
+
+    /**
      * @return name
      */
     public String getName() {
@@ -93,6 +117,48 @@ public class Log {
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    /**
+     * @return request_param
+     */
+    public String getRequestParam() {
+        return requestParam;
+    }
+
+    /**
+     * @param requestParam
+     */
+    public void setRequestParam(String requestParam) {
+        this.requestParam = requestParam == null ? null : requestParam.trim();
+    }
+
+    /**
+     * @return request_type
+     */
+    public String getRequestType() {
+        return requestType;
+    }
+
+    /**
+     * @param requestType
+     */
+    public void setRequestType(String requestType) {
+        this.requestType = requestType == null ? null : requestType.trim();
+    }
+
+    /**
+     * @return time
+     */
+    public Integer getTime() {
+        return time;
+    }
+
+    /**
+     * @param time
+     */
+    public void setTime(Integer time) {
+        this.time = time;
     }
 
     /**
@@ -110,124 +176,16 @@ public class Log {
     }
 
     /**
-     * 获取请求类型
-     *
-     * @return request_type - 请求类型
-     */
-    public String getRequestType() {
-        return requestType;
-    }
-
-    /**
-     * 设置请求类型
-     *
-     * @param requestType 请求类型
-     */
-    public void setRequestType(String requestType) {
-        this.requestType = requestType == null ? null : requestType.trim();
-    }
-
-    /**
-     * 获取请求参数类型
-     *
-     * @return request_param - 请求参数类型
-     */
-    public String getRequestParam() {
-        return requestParam;
-    }
-
-    /**
-     * 设置请求参数类型
-     *
-     * @param requestParam 请求参数类型
-     */
-    public void setRequestParam(String requestParam) {
-        this.requestParam = requestParam == null ? null : requestParam.trim();
-    }
-
-    /**
-     * 获取用户
-     *
-     * @return user - 用户
+     * @return user
      */
     public String getUser() {
         return user;
     }
 
     /**
-     * 设置用户
-     *
-     * @param user 用户
+     * @param user
      */
     public void setUser(String user) {
         this.user = user == null ? null : user.trim();
-    }
-
-    /**
-     * 获取IP
-     *
-     * @return ip - IP
-     */
-    public String getIp() {
-        return ip;
-    }
-
-    /**
-     * 设置IP
-     *
-     * @param ip IP
-     */
-    public void setIp(String ip) {
-        this.ip = ip == null ? null : ip.trim();
-    }
-
-    /**
-     * 获取IP信息
-     *
-     * @return ip_info - IP信息
-     */
-    public String getIpInfo() {
-        return ipInfo;
-    }
-
-    /**
-     * 设置IP信息
-     *
-     * @param ipInfo IP信息
-     */
-    public void setIpInfo(String ipInfo) {
-        this.ipInfo = ipInfo == null ? null : ipInfo.trim();
-    }
-
-    /**
-     * 获取次数
-     *
-     * @return time - 次数
-     */
-    public Integer getTime() {
-        return time;
-    }
-
-    /**
-     * 设置次数
-     *
-     * @param time 次数
-     */
-    public void setTime(Integer time) {
-        this.time = time;
-    }
-
-    /**
-     * @return create_date
-     */
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    /**
-     * @param createDate
-     */
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
     }
 }
